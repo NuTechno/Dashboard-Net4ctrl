@@ -37,13 +37,13 @@
   function signIn() {
     var email = document.getElementById("myEmail");
     var password = document.getElementById("myPassword");
-    //sends users to their user index page
+    //sends users to their user home page
     if(email.value && password.value) {
-      location.replace("index.html");
+      location.replace("home.html");
       /*--Set alert to notify users when they sign in or need to sign in--*/
       alert("You're signed in! " + email.value);
     } else {
-      location.replace("login.html");
+      location.replace("index.html");
       alert("You need to sign in first!")
     }
     /*--Create promise to authenticate user sign in info--*/
@@ -56,8 +56,8 @@
   function signOut() {
     auth.signOut();
     alert("You've signed out!");
-    //return users to login page
-    location.replace("login.html");
+    //return users to index page
+    location.replace("index.html");
   }
   /*--Test code to determine whether user is active or not
   auth.onAuthStateChanged(function(user) {

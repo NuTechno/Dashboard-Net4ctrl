@@ -1,329 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" class="has-aside-left has-aside-mobile-transition has-navbar-fixed-top has-aside-expanded">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="expires" content="0">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard</title>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard Login</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    
+    <!--External CSS file-->
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+      .footer {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <!--Login page site logo-->
 
-  <!-- Bulma is included -->
-  <link rel="stylesheet" href="css/main.min.css">
-  <link rel="stylesheet" href="css/login.css">
-
-  <!-- Fonts -->
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
-  <script type="text/javascript" src="js/login.js"></script>
-
-
-
-
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
-
-</head>
-<body>
-
-  
-
-
-
-
-<div id="app">
-  <nav id="navbar-main" class="navbar is-fixed-top">
-    <div class="navbar-brand">
-      <a class="navbar-item is-hidden-desktop jb-aside-mobile-toggle">
-        <span class="icon"><i class="mdi mdi-forwardburger mdi-24px"></i></span>
-      </a>
-      <div class="navbar-item has-control">
-        <div class="control"><input placeholder="Search everywhere..." class="input"></div>
-      </div>
-    </div>
-    <div class="navbar-brand is-right">
-      <a class="navbar-item is-hidden-desktop jb-navbar-menu-toggle" data-target="navbar-menu">
-        <span class="icon"><i class="mdi mdi-dots-vertical"></i></span>
-      </a>
-    </div>
-    <div class="navbar-menu fadeIn animated faster" id="navbar-menu">
-      <div class="navbar-end">
-        
-        
-        
-        <a href="https://net4ctrl.yolasite.com/" target="_blank" title="About" class="navbar-item has-divider is-desktop-icon-only">
-          <span class="icon"><i class="mdi mdi-help-circle-outline"></i></span>
-          <span>About</span>
-        </a>
-        
-        <a title="Log out"  class="navbar-item is-desktop-icon-only">
-          <span class="icon"  ><i class="mdi mdi-logout"></i></span>
-          <span>Log out</span>
-        </a>
-        
-      </div>
-    </div>
-  </nav>
-  <aside class="aside is-placed-left is-expanded">
-    <div class="aside-tools">
-      <div class="aside-tools-label">
-        <span><b>Admin</b> Company</span>
-      </div>
-    </div>
-    <div class="menu is-menu-main">
-      <p class="menu-label">General</p>
-      <ul class="menu-list">
-        <li>
-          <a href="index.html" class="is-active router-link-active has-icon">
-            <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
-            <span class="menu-item-label">Dashboard</span>
-          </a>
-        </li>
-
-      </ul>
-      <p class="menu-label">Insights</p>
-      <ul class="menu-list">
-
-        
+      <h1 style="color: black;">Login Form</h1>
+       <div class="myForm">
+          <input type="email" placeholder="Email" id="myEmail">
+          <input type="password" placeholder="Password" id="myPassword">
+          <!--Sign up and Sign In buttons-->
+          <!-- <button onclick="signUp()" id="signUp">Sign Up</button> -->
+          <button onclick="signIn()" id="signIn">Sign In</button>
+       </div>
+     </div>
 
 
-        <li>
-          <a href="product.html" class="has-icon">
-            <span class="icon"><i class="mdi mdi-cart-outline"></i></span>
-            <span class="menu-item-label">Products</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="tables.html" class="has-icon">
-            <span class="icon has-update-mark"><i class="mdi mdi-table"></i></span>
-            <span class="menu-item-label">Tables</span>
-          </a>
-        </li>
-      </ul>
-      <p class="menu-label">About</p>
-      <ul class="menu-list">
-        <li>
-          <a href="https://net4ctrl.yolasite.com/" target="_blank" class="has-icon">
-            <span class="icon"><i class="mdi mdi-help-circle"></i></span>
-            <span class="menu-item-label">About</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </aside>
-  <section class="section is-title-bar">
-    <div class="level">
-      <div class="level-left">
-        <div class="level-item">
-          <ul>
-            <li>Admin</li>
-            <li>Dashboard</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="hero is-hero-bar">
-    <div class="hero-body">
-      <div class="level">
-        <div class="level-left">
-          <div class="level-item"><h1 class="title">
-            Dashboard
-          </h1></div>
-        </div>
-        <div class="level-right" style="display: none;">
-          <div class="level-item"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section is-main-section">
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <div class="card tile is-child">
-          <div class="card-content">
-            <div class="level is-mobile">
-              <div class="level-item">
-                <div class="is-widget-label"><h3 class="subtitle is-spaced">
-                  Total Sales
-                </h3>
-                <!--Read Data In-->
-
-                
-                  <h1 class="title">
-                    <strong id="amount"></strong>
-                  </h1>
-                </div>
-              </div>
-              <div class="level-item has-widget-icon">
-                <div class="is-widget-icon"><span class="icon has-text-primary is-large"><i
-                    class="mdi mdi-account-multiple mdi-48px"></i></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="card tile is-child">
-          <div class="card-content">
-            <div class="level is-mobile">
-              <div class="level-item">
-                <div class="is-widget-label"><h3 class="subtitle is-spaced">
-                  Revenue
-                </h3>
-                  <h1 class="title">
-                    <strong id="revenue_amount"></strong>
-                  </h1>
-                </div>
-              </div>
-              <div class="level-item has-widget-icon">
-                <div class="is-widget-icon"><span class="icon has-text-info is-large"><i
-                    class="mdi mdi-cart-outline mdi-48px"></i></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="card tile is-child">
-          <div class="card-content">
-            <div class="level is-mobile">
-              <div class="level-item">
-                <div class="is-widget-label"><h3 class="subtitle is-spaced">
-                  Orders
-                </h3>
-                  <h1 class="title">
-                    <strong id="order_amount"></strong>
-                  </h1>
-                </div>
-              </div>
-              <div class="level-item has-widget-icon">
-                <div class="is-widget-icon"><span class="icon has-text-success is-large"><i
-                    class="mdi mdi-finance mdi-48px"></i></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">
-          <span class="icon"><i class="mdi mdi-finance"></i></span>
-          Performance
-        </p>
-        <a href="#" class="card-header-icon">
-          <span class="icon"><i class="mdi mdi-reload"></i></span>
-        </a>
-      </header>
-      <div class="card-content">
-        <div class="chart-area">
-          <div style="height: 100%;">
-            <div class="chartjs-size-monitor">
-              <div class="chartjs-size-monitor-expand">
-                <div></div>
-              </div>
-              <div class="chartjs-size-monitor-shrink">
-                <div></div>
-              </div>
-            </div>
-            <canvas id="big-line-chart" width="2992" height="1000" class="chartjs-render-monitor" style="display: block; height: 400px; width: 1197px;"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-   
-
-
-
-  
-  <footer class="footer">
-    <div class="container-fluid">
-      <div class="level">
-        <div class="level-left">
-          <div class="level-item">
-            © 2020, Net4Ctrl
-          </div>
-          <div class="level-item">
-            <a href="https://net4ctrl.yolasite.com/" style="height: 40px">
-              <img src="https://img.shields.io/github/v/release/vikdiesel/admin-one-bulma-dashboard?color=%23999">
-            </a>
-          </div>
-        </div>
-        <div class="level-right">
-          <div class="level-item">
-            <div class="logo">
-              <a href="https://net4ctrl.yolasite.com/" target="_blank"><img src="img/Net-4-Control.png" alt="Net4Ctrl" style="height: 70px; ;"></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-</div>
-
-<!-- <div id="sample-modal" class="modal">
-  <div class="modal-background jb-modal-close"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Confirm action</p>
-      <button class="delete jb-modal-close" aria-label="close"></button>
-    </header>
-    <section class="modal-card-body">
-      <p>This will permanently delete <b>Some Object</b></p>
-      <p>This is sample modal</p>
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button jb-modal-close">Cancel</button>
-      <button class="button is-danger jb-modal-close">Delete</button>
-    </footer>
-  </div>
-  <button class="modal-close is-large jb-modal-close" aria-label="close"></button>
-</div> -->
-
-
-
-<!-- The core Firebase JS SDK is always required and must be listed first...make sure you remove -app from below line -->
-<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAlbVSU_pTs6DVQI-QMnQO_aFUqPvgo4lY",
-    authDomain: "web-app-3eb5e.firebaseapp.com",
-    databaseURL: "https://web-app-3eb5e.firebaseio.com",
-    projectId: "web-app-3eb5e",
-    storageBucket: "web-app-3eb5e.appspot.com",
-    messagingSenderId: "643203578636",
-    appId: "1:643203578636:web:c0025425207221f554e729",
-    measurementId: "G-8JLGQB4GBY"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-
-<script src="./js/firebase.js"></script>
-<script src="./js/table.js"></script>
-
-
-
-<!-- Scripts below are for demo only -->
-<script type="text/javascript" src="js/main.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-<script type="text/javascript" src="js/chart.sample.min.js"></script>
-
-
-
-
-<!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
-<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
-</body>
+     <!--External JS file-->
+    <script src="js/login.js"></script>
+    <!--Footer-->
+      <div class="footer">
+       <p class="footer">Copyright 2020 by Valerie Hare.</p>
+       <p class="footer">Logo created by <a href="https://www.designevo.com/logo-maker/" title="Free Online Logo Maker">DesignEvo logo maker</a></p>
+     </div>
+  </body>
 </html>
