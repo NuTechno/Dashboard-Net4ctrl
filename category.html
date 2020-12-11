@@ -1,0 +1,136 @@
+<html lang="en" class="has-aside-left has-aside-mobile-transition has-navbar-fixed-top has-aside-expanded">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Category</title>
+        <!-- Bulma is included -->
+        <link rel="stylesheet" href="css/main.min.css">
+
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+
+    <div class="container mt-2">
+        <div class="card">
+            <div class="card-body">
+                <form id="post-form">
+                <center><h3>Products</h3></center>
+                <textarea id="post" class="form-control" placeholder="Name of product"></textarea>
+                <textarea id= "amount" class="form-control"  placeholder="Amount in Rands (Numbers only)"></textarea>
+                    <input type="file" class="form-control" id="image" accept="images/*">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-success" onclick="upload()">Upload</button>
+                    </div>
+
+                    </form>
+            </div>
+
+        </div>
+        <div class="row mt-4" id="posts">
+
+        </div>
+
+    </div>
+
+
+    <aside class="aside is-placed-left is-expanded">
+        <div class="aside-tools">
+          <div class="aside-tools-label">
+            <span><b>Admin</b> One HTML</span>
+          </div>
+        </div>
+        <div class="menu is-menu-main">
+          <p class="menu-label">General</p>
+          <ul class="menu-list">
+            <li>
+              <a href="home.html" class="has-icon">
+                <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
+                <span class="menu-item-label">Dashboard</span>
+              </a>
+            </li>
+          </ul>
+          <p class="menu-label">Insights</p>
+          <ul class="menu-list">
+            
+                <li>
+                    <a href="product.html" class="is-active router-link-active">
+                      <span class="icon"><i class="mdi mdi-cart-outline"></i></span>
+                      <span class="menu-item-label">Products</span>
+                    </a>
+                  </li>
+
+                  <li>
+              <a href="tables.html" class="has-icon">
+                <span class="icon has-update-mark"><i class="mdi mdi-table"></i></span>
+                <span class="menu-item-label">Tables</span>
+              </a>
+            </li>
+           
+          </ul>
+          <p class="menu-label">About</p>
+          <ul class="menu-list">
+            <li>
+             
+            <li>
+              <a href="https://net4ctrl.yolasite.com/" target="_blank" class="has-icon">
+                <span class="icon"><i class="mdi mdi-help-circle"></i></span>
+                <span class="menu-item-label">About</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="index.html" class="has-icon">
+                <span class="icon"><i class="mdi mdi-logout"></i></span>
+                <span class="menu-item-label">Sign Out</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+
+
+
+
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first...make sure you remove -app from below line -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAlbVSU_pTs6DVQI-QMnQO_aFUqPvgo4lY",
+    authDomain: "web-app-3eb5e.firebaseapp.com",
+    databaseURL: "https://web-app-3eb5e.firebaseio.com",
+    projectId: "web-app-3eb5e",
+    storageBucket: "web-app-3eb5e.appspot.com",
+    messagingSenderId: "643203578636",
+    appId: "1:643203578636:web:c0025425207221f554e729",
+    measurementId: "G-8JLGQB4GBY"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="./js/product.js"></script>
+
+
+        <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
+        <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">   
+
+    </body>
+</html>
